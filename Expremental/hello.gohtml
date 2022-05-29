@@ -1,3 +1,21 @@
 
 <h1>Hello, {{.Name}}</h1>
+<h2>My dog name is {{.DogName}}</h2>
 
+
+
+<p> 2+2 is equal to {{.Nomber}}</p>
+<p>2+2 is equal to Float Example {{.Float}}</p>
+<p>Slice = {{.Slice}}</p>
+<p>Map = {{.Map}}</p>
+
+
+<pre>
+    {{.Map}}
+</pre>
+
+
+<script>
+    var m = {{.Map}};
+    console.log("{{.DogName}}")
+</script>

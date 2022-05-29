@@ -5,8 +5,13 @@ import (
 	"os"
 )
 
-type GooKhalo struct {
-	NaamKyaHai string
+type GivingNames struct {
+	Name    string
+	DogName string
+	Nomber  int
+	Float   float64
+	Slice   []string
+	Map     map[string]string
 }
 
 func main() {
@@ -15,11 +20,19 @@ func main() {
 		panic(err)
 	}
 
-	data := GooKhalo{
-		NaamKyaHai: "Bob barker",
+	cons := GivingNames{
+		Name:    "Bob barker",
+		DogName: "LOduKutta",
+		Nomber:  4,
+		Float:   10.164,
+		Slice:   []string{"a", "b", "c"},
+		Map: map[string]string{
+			"key1": "value1",
+			"key2": "value",
+		},
 	}
 
-	err = t.Execute(os.Stdout, data)
+	err = t.Execute(os.Stdout, cons)
 	if err != nil {
 		panic(err)
 	}
