@@ -30,8 +30,8 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	homeView = views.NewView("KhudSe", "views/home.gohtml")
-	contactView = views.NewView("KhudSe", "views/contact.gohtml")
+	homeView = views.NewView("khudse", "views/home.gohtml")
+	contactView = views.NewView("khudse", "views/contact.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)

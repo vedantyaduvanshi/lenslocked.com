@@ -1,0 +1,3 @@
+# lenslocked.com/views
+views\view.go:8:5: syntax error: unexpected {, expecting name
+views\view.go:9:12: syntax error: unexpected string after top level declaration
