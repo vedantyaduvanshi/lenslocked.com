@@ -2,17 +2,17 @@ package views
 
 import (
 	"html/template"
+	"net/http"
 	"path/filepath"
 )
 
 var (
 	LayoutDir   string = "views/layouts/"
-	TemplateExt string = ".gohtml"
+	TemplateExt string = ".html"
 )
 
 func NewView(layout string, files ...string) *View {
 	files = append(files, layoutFiles()...)
-
 	t, err := template.ParseFiles(files...)
 	if err != nil {
 		panic(err)
@@ -27,6 +27,11 @@ func NewView(layout string, files ...string) *View {
 type View struct {
 	Template *template.Template
 	Layout   string
+}
+
+//Render is used to render the view with the pre fefined layout
+func (v *View) Render(w http.ResponseWriter, data interface{}) err {
+	return v.Template.ExecuteTemplate(w, v.Layout, data)
 }
 
 // Layout Files return a Slice of stirngs Representing

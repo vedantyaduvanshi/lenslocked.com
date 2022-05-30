@@ -1,0 +1,106 @@
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body{
+height: 20000px;
+overflow-x: hidden;
+}
+
+body::-webkit-scrollbar { width: 0 !important }
+
+
+/* <!-- NAVBARRRRRRRRRRR --> */
+
+
+#leftNav {
+top: 3%;
+left: 20%;
+position: fixed;
+overflow: hidden;
+background: transparent;
+}
+
+#leftNav a {
+float: left;
+color: #A1FFCE;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 20px;
+
+}
+
+#leftNav a:hover {
+
+color: #A1FFCE;
+}
+
+
+
+
+/* _______________________ */
+#RightNav {
+top: 3%;
+left: 71%;
+position: fixed;
+overflow: hidden;
+background: transparent;
+}
+
+#RightNav a {
+float: right;
+
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 20px;
+
+border-radius: 1px;
+
+}
+
+#RightNav a:hover {
+background-color: #A1FFCE;
+color: black;
+}
+
+#su{
+background-color: #A1FFCE;
+color: black;
+}
+
+#li{
+color: #A1FFCE;
+
+}
+
+
+#MainMagic{
+display: inline-block;
+text-align: center;
+align-items: center;
+height: 1080px;
+width:100%;
+background-image: url("stars.png" );
+background-repeat: no-repeat;
+}
+
+
+
+
+
+#MainMagic h1{
+margin-top: 250px;
+display: inline-block;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 200px;
+background: -webkit-linear-gradient( #ef32d9 ,  #5afaf7);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-right: 18px;
+}

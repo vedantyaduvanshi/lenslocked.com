@@ -14,27 +14,32 @@ var (
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	err := homeView.Template.ExecuteTemplate(w, homeView.Layout, nil)
-	if err != nil {
-		panic(err)
-	}
+	must(homeView.Render(w, nil))
 }
 
 func contact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	err := contactView.Template.ExecuteTemplate(w, contactView.Layout, nil)
-	if err != nil {
-		panic(err)
-	}
+	must(contactView.Render(w, nil))
 }
 
 func main() {
 
-	homeView = views.NewView("khudse", "views/home.gohtml")
-	contactView = views.NewView("khudse", "views/contact.gohtml")
+	homeView = views.NewView("khudse", "views/home.html")
+	contactView = views.NewView("khudse", "views/contact.html")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
+	// Assets
+	assetHandler := http.FileServer(http.Dir("./static/"))
+	assetHandler = http.StripPrefix("/static/", assetHandler)
+	r.PathPrefix("/static/").Handler(assetHandler)
+
 	http.ListenAndServe(":3000", r)
+}
+
+func must(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
