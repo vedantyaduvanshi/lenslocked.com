@@ -30,7 +30,7 @@ type View struct {
 }
 
 //Render is used to render the view with the pre fefined layout
-func (v *View) Render(w http.ResponseWriter, data interface{}) err {
+func (v *View) Render(w http.ResponseWriter, data interface{}) error {
 	return v.Template.ExecuteTemplate(w, v.Layout, data)
 }
 
