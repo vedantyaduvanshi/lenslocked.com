@@ -1,0 +1,22 @@
+{{define "yield"}}
+{{template "signupForm"}}
+{{end}}
+
+
+{{define "signupForm"}}
+<div id="MainMagic" >
+    <img  id="arrow" src="/static/arrow.png" alt="">
+    <b id="arrowText" >Already a Member ? <br> LogIn Here!</b>
+
+
+    <div class="login">
+        
+        <form  action="/signup" method="POST" class="form-group">
+            <input type="email" name="email" class="form-control" id="email" placeholder="Email"required="required" />
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password"required="required" />
+            <button type="submit" id="btnsubmit" class="bbtn btn-primary btn-block btn-large">SignUp</button>
+        </form>
+    </div>
+</div>
+
+{{end}}
